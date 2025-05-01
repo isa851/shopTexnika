@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
+  variant?: 'primary' | 'secondary' | 'outline' | 'text';
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   children: React.ReactNode;
@@ -15,28 +15,27 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none';
+  const baseStyles = 'font-medium rounded transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
   
-  const variantClasses = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800',
-    secondary: 'bg-gray-100 text-gray-900 hover:bg-gray-200 active:bg-gray-300',
-    outline: 'border border-gray-300 bg-transparent hover:bg-gray-100 active:bg-gray-200',
-    ghost: 'bg-transparent hover:bg-gray-100 active:bg-gray-200',
-    danger: 'bg-red-600 text-white hover:bg-red-700 active:bg-red-800'
+  const variantStyles = {
+    primary: 'bg-[#FFA41C] hover:bg-[#F59000] text-black focus:ring-yellow-500',
+    secondary: 'bg-[#232F3E] hover:bg-[#37475A] text-white focus:ring-gray-500',
+    outline: 'bg-transparent border border-[#D5D9D9] hover:bg-gray-100 text-gray-800 focus:ring-gray-300',
+    text: 'bg-transparent hover:bg-gray-100 text-[#007185] hover:text-[#00596B] focus:ring-transparent',
   };
   
-  const sizeClasses = {
-    sm: 'text-sm h-8 px-3',
-    md: 'text-base h-10 px-4',
-    lg: 'text-lg h-12 px-6'
+  const sizeStyles = {
+    sm: 'py-1 px-3 text-sm',
+    md: 'py-2 px-4 text-base',
+    lg: 'py-3 px-6 text-lg',
   };
   
-  const widthClass = fullWidth ? 'w-full' : '';
+  const widthStyle = fullWidth ? 'w-full' : '';
   
-  const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${className}`;
+  const buttonStyles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyle} ${className}`;
   
   return (
-    <button className={classes} {...props}>
+    <button className={buttonStyles} {...props}>
       {children}
     </button>
   );

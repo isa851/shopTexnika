@@ -1,115 +1,107 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Globe, ArrowUp } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-8">
-      <div className="container mx-auto px-4">
+    <footer className="bg-[#232F3E] text-white">
+      {/* Back to top button */}
+      <button 
+        onClick={scrollToTop}
+        className="w-full bg-[#37475A] hover:bg-[#485769] py-3 text-sm font-medium transition-colors"
+      >
+        <div className="flex items-center justify-center">
+          <ArrowUp size={16} className="mr-2" />
+          Back to top
+        </div>
+      </button>
+      
+      {/* Main footer content */}
+      <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Column 1: About */}
+          {/* Get to Know Us */}
           <div>
-            <h3 className="text-xl font-bold mb-4">TechStore</h3>
-            <p className="text-gray-400 mb-4">
-              Your one-stop destination for the latest and greatest technology products.
-              We offer a wide range of devices at competitive prices.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Facebook size={20} />
+            <h3 className="font-bold text-lg mb-4">Get to Know Us</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li><Link to="/about" className="hover:text-white">About Us</Link></li>
+              <li><Link to="/careers" className="hover:text-white">Careers</Link></li>
+              <li><Link to="/press" className="hover:text-white">Press Releases</Link></li>
+              <li><Link to="/impact" className="hover:text-white">Community Impact</Link></li>
+              <li><Link to="/sustainability" className="hover:text-white">Sustainability</Link></li>
+            </ul>
+          </div>
+          
+          {/* Make Money with Us */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Make Money with Us</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li><Link to="/sell" className="hover:text-white">Sell products</Link></li>
+              <li><Link to="/associates" className="hover:text-white">Become an Affiliate</Link></li>
+              <li><Link to="/partner" className="hover:text-white">Advertise Your Products</Link></li>
+              <li><Link to="/publish" className="hover:text-white">Self-Publish with Us</Link></li>
+              <li><Link to="/host" className="hover:text-white">Host on our platform</Link></li>
+            </ul>
+          </div>
+          
+          {/* Help & Support */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Help & Support</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li><Link to="/help" className="hover:text-white">Your Account</Link></li>
+              <li><Link to="/shipping" className="hover:text-white">Shipping Rates & Policies</Link></li>
+              <li><Link to="/returns" className="hover:text-white">Returns & Replacements</Link></li>
+              <li><Link to="/contact" className="hover:text-white">Contact Us</Link></li>
+              <li><Link to="/help-center" className="hover:text-white">Help Center</Link></li>
+            </ul>
+          </div>
+          
+          {/* Stay Connected */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Stay Connected</h3>
+            <div className="flex space-x-4 mb-4">
+              <a href="#" className="hover:text-[#FFA41C] transition-colors">
+                <Facebook size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Twitter size={20} />
+              <a href="#" className="hover:text-[#FFA41C] transition-colors">
+                <Twitter size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Youtube size={20} />
+              <a href="#" className="hover:text-[#FFA41C] transition-colors">
+                <Instagram size={24} />
               </a>
             </div>
-          </div>
-          
-          {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-gray-400 hover:text-white">Home</Link>
-              </li>
-              <li>
-                <Link to="/categories" className="text-gray-400 hover:text-white">Shop</Link>
-              </li>
-              <li>
-                <Link to="/deals" className="text-gray-400 hover:text-white">Deals</Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-gray-400 hover:text-white">About Us</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-400 hover:text-white">Contact</Link>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Column 3: Customer Service */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/faq" className="text-gray-400 hover:text-white">FAQ</Link>
-              </li>
-              <li>
-                <Link to="/shipping" className="text-gray-400 hover:text-white">Shipping & Returns</Link>
-              </li>
-              <li>
-                <Link to="/warranty" className="text-gray-400 hover:text-white">Warranty</Link>
-              </li>
-              <li>
-                <Link to="/privacy" className="text-gray-400 hover:text-white">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link to="/terms" className="text-gray-400 hover:text-white">Terms & Conditions</Link>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Column 4: Contact */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="mr-2 text-gray-400 shrink-0 mt-1" size={18} />
-                <span className="text-gray-400">123 Tech Street, San Francisco, CA 94107, USA</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="mr-2 text-gray-400" size={18} />
-                <a href="tel:+1234567890" className="text-gray-400 hover:text-white">
-                  +1 (234) 567-890
-                </a>
-              </li>
-              <li className="flex items-center">
-                <Mail className="mr-2 text-gray-400" size={18} />
-                <a href="mailto:info@techstore.com" className="text-gray-400 hover:text-white">
-                  info@techstore.com
-                </a>
-              </li>
-            </ul>
+            
+            {/* Language selector */}
+            <div className="flex items-center text-sm border border-gray-600 rounded p-2 w-fit">
+              <Globe size={16} className="mr-2" />
+              <select className="bg-transparent outline-none">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="ja">日本語</option>
+              </select>
+            </div>
           </div>
         </div>
-        
-        <hr className="border-gray-800 my-8" />
-        
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} TechStore. All rights reserved.
-          </p>
-          <div className="mt-4 md:mt-0">
-            <img 
-              src="https://images.pexels.com/photos/175679/pexels-photo-175679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Payment methods" 
-              className="h-6 opacity-70" 
-            />
+      </div>
+      
+      {/* Bottom bar */}
+      <div className="bg-[#131A22] py-4 text-sm text-gray-400">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-2 md:mb-0">
+            <span>© 2025 Amazify. All Rights Reserved.</span>
+          </div>
+          <div className="flex space-x-4">
+            <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white">Terms of Use</Link>
+            <Link to="/cookies" className="hover:text-white">Cookie Policy</Link>
           </div>
         </div>
       </div>

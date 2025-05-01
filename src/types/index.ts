@@ -1,18 +1,19 @@
+// Define types for the e-commerce application
+
 export interface Product {
   id: string;
-  name: string;
-  category: string;
-  price: number;
-  discountedPrice?: number;
+  title: string;
   description: string;
-  features: string[];
-  specifications: Record<string, string>;
-  images: string[];
-  stock: number;
+  price: number;
   rating: number;
-  reviews: number;
-  isNew?: boolean;
-  isFeatured?: boolean;
+  reviewCount: number;
+  images: string[];
+  categories: string[];
+  brand: string;
+  inStock: boolean;
+  prime: boolean;
+  discount?: number;
+  tags?: string[];
 }
 
 export interface CartItem {
@@ -23,14 +24,12 @@ export interface CartItem {
 export interface Category {
   id: string;
   name: string;
-  image: string;
-  description: string;
+  subcategories?: Category[];
 }
 
-export interface Banner {
+export interface User {
   id: string;
-  title: string;
-  subtitle: string;
-  image: string;
-  link: string;
+  name: string;
+  email: string;
+  isLoggedIn: boolean;
 }

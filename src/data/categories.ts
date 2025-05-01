@@ -2,39 +2,70 @@ import { Category } from '../types';
 
 export const categories: Category[] = [
   {
-    id: 'smartphones',
-    name: 'Smartphones',
-    image: 'https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg',
-    description: 'Latest smartphones with cutting-edge technology and features'
+    id: 'electronics',
+    name: 'Electronics',
+    subcategories: [
+      { id: 'computers', name: 'Computers & Accessories' },
+      { id: 'phones', name: 'Cell Phones & Accessories' },
+      { id: 'tv-video', name: 'TV & Video' },
+      { id: 'audio', name: 'Audio & Home Theater' },
+      { id: 'cameras', name: 'Camera & Photo' },
+      { id: 'wearables', name: 'Wearable Technology' },
+    ]
   },
   {
-    id: 'laptops',
-    name: 'Laptops',
-    image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg',
-    description: 'Powerful laptops for work, gaming and everyday use'
+    id: 'home-kitchen',
+    name: 'Home & Kitchen',
+    subcategories: [
+      { id: 'furniture', name: 'Furniture' },
+      { id: 'kitchen', name: 'Kitchen & Dining' },
+      { id: 'bedding', name: 'Bedding' },
+      { id: 'appliances', name: 'Appliances' },
+      { id: 'decor', name: 'Home Décor' },
+    ]
   },
   {
-    id: 'audio',
-    name: 'Audio',
-    image: 'https://images.pexels.com/photos/3394665/pexels-photo-3394665.jpeg',
-    description: 'Premium audio devices for an immersive listening experience'
+    id: 'clothing',
+    name: 'Clothing, Shoes & Jewelry',
+    subcategories: [
+      { id: 'womens', name: 'Women' },
+      { id: 'mens', name: 'Men' },
+      { id: 'kids', name: 'Kids' },
+      { id: 'watches', name: 'Watches' },
+      { id: 'luggage', name: 'Luggage' },
+    ]
   },
   {
-    id: 'wearables',
-    name: 'Wearables',
-    image: 'https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg',
-    description: 'Smart wearable technology to enhance your lifestyle'
+    id: 'books',
+    name: 'Books',
+    subcategories: [
+      { id: 'fiction', name: 'Fiction' },
+      { id: 'nonfiction', name: 'Nonfiction' },
+      { id: 'kindle', name: 'Kindle eBooks' },
+      { id: 'children', name: 'Children\'s Books' },
+      { id: 'textbooks', name: 'Textbooks' },
+    ]
   },
   {
-    id: 'tvs',
-    name: 'TVs',
-    image: 'https://images.pexels.com/photos/333984/pexels-photo-333984.jpeg',
-    description: 'High-definition TVs with smart features and stunning display'
+    id: 'sports',
+    name: 'Sports & Outdoors',
+    subcategories: [
+      { id: 'outdoor', name: 'Outdoor Recreation' },
+      { id: 'fitness', name: 'Exercise & Fitness' },
+      { id: 'hunting', name: 'Hunting & Fishing' },
+      { id: 'team-sports', name: 'Team Sports' },
+      { id: 'water-sports', name: 'Water Sports' },
+    ]
   },
   {
-    id: 'tablets',
-    name: 'Tablets',
-    image: 'https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg',
-    description: 'Versatile tablets for productivity and entertainment'
-  }
+    id: 'toys',
+    name: 'Toys & Games',
+    subcategories: [
+      { id: 'kids-toys', name: 'Kids' },
+      { id: 'games', name: 'Games & Puzzles' },
+      { id: 'dolls', name: 'Dolls & Accessories' },
+      { id: 'learning', name: 'Learning & Education' },
+      { id: 'hobbies', name: 'Hobbies' },
+    ]
+  },
 ];
