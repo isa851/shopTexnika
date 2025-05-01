@@ -11,7 +11,7 @@ import CategoryPage from './pages/CategoryPage';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
 
-// Add styles for scrollbar
+
 import './index.css';
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/category/:categoryId" element={<CategoryPage />} />
                 <Route path="/category/:categoryId/:subcategoryId" element={<CategoryPage />} />
-                {/* Fallback route */}
+
                 <Route path="*" element={<Home />} />
               </Routes>
             </main>
