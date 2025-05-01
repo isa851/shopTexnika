@@ -27,7 +27,7 @@ const Header: React.FC = () => {
               <MapPin size={16} className="mr-1" />
               <div>
                 <div className="text-gray-300 text-xs">Deliver to</div>
-                <div className="font-bold">United States</div>
+                <div className="font-bold">Osh</div>
               </div>
             </div>
             
